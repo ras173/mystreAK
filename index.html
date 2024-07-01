@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streak Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #streak {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Streak Counter</h1>
+    <div id="streak">Zaid has been doing X for 0 hours 0 minutes 0 seconds</div>
+    <script>
+        function startStreakCounter() {
+            const streakElement = document.getElementById('streak');
+            let hours = 0;
+            let minutes = 0;
+            let seconds = 0;
+
+            setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes === 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+                streakElement.textContent = `HXdES IS ON NOFAP for ${hours} hours ${minutes} minutes ${seconds} seconds`;
+            }, 1000);
+        }
+
+        startStreakCounter();
+    </script>
+</body>
+</html>
