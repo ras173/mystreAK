@@ -31,17 +31,12 @@
 <body>
     <div class="container">
         <h1>Streak Counter</h1>
-        <div id="streak">Zaid has been doing X for 0 hours 0 minutes 0 seconds</div>
+        <div id="streak">Zaid has been doing NO FAP for 0 hours 0 minutes 0 seconds</div>
     </div>
     <script>
         function startStreakCounter() {
             const streakElement = document.getElementById('streak');
-            let startTime = localStorage.getItem('startTime');
-            
-            if (!startTime) {
-                startTime = new Date().getTime();
-                localStorage.setItem('startTime', startTime);
-            }
+            const startTime = new Date('2024-07-02T02:20:00').getTime();  // Set your fixed start time here
 
             setInterval(() => {
                 const currentTime = new Date().getTime();
@@ -51,7 +46,7 @@
                 const minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
 
-                streakElement.textContent = `Zod has been doing No Fap for ${hours} hours ${minutes} minutes ${seconds} seconds`;
+                streakElement.textContent = `Zaid has been doing X for ${hours} hours ${minutes} minutes ${seconds} seconds`;
             }, 1000);
         }
 
@@ -59,4 +54,5 @@
     </script>
 </body>
 </html>
+
 
